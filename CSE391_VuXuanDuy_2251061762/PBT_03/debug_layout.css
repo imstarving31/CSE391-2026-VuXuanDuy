@@ -1,0 +1,50 @@
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    margin-bottom: 50px;
+}
+
+.clear {
+    clear: both;
+}
+
+/* =========================================
+   CÁCH 1: Dùng border-box
+   ========================================= */
+.sidebar.fix-1 {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e3f2fd;
+}
+
+.content.fix-1 {
+    box-sizing: border-box;
+    width: 660px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #fff3e0;
+}
+
+/* =========================================
+   CÁCH 2: Tính toán trừ hao (Không dùng border-box)
+   ========================================= */
+.sidebar.fix-2-sidebar {
+    width: 258px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e3f2fd;
+}
+
+.content.fix-2-content {
+    width: 598px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #fff3e0;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Giới Thiệu Sản Phẩm Multimedia</title>
+</head>
+<body>
+
+    <header>
+        <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="22" fill="#007BFF" />
+            <text x="25" y="30" font-size="14" font-weight="bold" font-family="Arial" text-anchor="middle" fill="#FFFFFF">TLU</text>
+        </svg>
+        <h1>Giới thiệu sản phẩm mới</h1>
+    </header>
+
+    <section>
+        <h2>Nhạc nền giới thiệu</h2>
+        <audio controls>
+            <source src="background-music.mp3" type="audio/mpeg">
+            <source src="background-music.ogg" type="audio/ogg">
+        </audio>
+    </section>
+
+    <section>
+        <h2>Hình ảnh sản phẩm</h2>
+        
+        <figure>
+            <img src="product1.jpg" alt="Điện thoại iPhone 16 Pro Max màu Titan tự nhiên nhìn từ mặt trước" loading="lazy" style="max-width: 100%; height: auto;">
+            <figcaption>Hình 1: Mặt trước iPhone 16 Pro Max</figcaption>
+        </figure>
+
+        <figure>
+            <img src="product2.jpg" alt="Cụm 3 camera sau của điện thoại iPhone 16 Pro Max chụp cận cảnh" loading="lazy" style="max-width: 100%; height: auto;">
+            <figcaption>Hình 2: Cụm camera siêu nét</figcaption>
+        </figure>
+
+        <figure>
+            <img src="product3.jpg" alt="Hộp đựng sản phẩm iPhone 16 Pro Max cùng cáp sạc đi kèm" loading="lazy" style="max-width: 100%; height: auto;">
+            <figcaption>Hình 3: Phụ kiện đi kèm trong hộp</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Video Demo Sản Phẩm (Tải từ server)</h2>
+        <video controls poster="video-thumbnail.jpg" style="max-width: 100%; height: auto;">
+            <source src="product-demo.mp4" type="video/mp4">
+            <source src="product-demo.webm" type="video/webm">
+        </video>
+    </section>
+
+    <section>
+        <h2>Video Review (YouTube)</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Vn3FjL8FKX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 100%; height: auto;"></iframe>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
+.skills-section {
+    padding: 5rem 1rem;
+    background-color: var(--color-light); /* Màu nền xám nhạt để tách biệt với About */
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    margin-bottom: 3rem;
+}
+
+/* Dùng Grid để chia 2 cột cho các thẻ kỹ năng */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* --- Thẻ kỹ năng (Card trắng) --- */
+.skill-item {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ cho thẻ */
+}
+
+/* Dùng Flexbox đẩy tên và % ra 2 mép */
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.skill-name {
+    color: var(--color-dark);
+}
+
+.skill-percent {
+    color: var(--color-primary);
+}
+
+/* --- Thanh Progress Bar --- */
+.skill-bar {
+    background-color: #e2e8f0; /* Màu nền thanh dưới */
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden; /* Cắt phần bị lồi ra ngoài góc bo */
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); /* Chuyển màu từ trái sang phải */
+    border-radius: 10px;
+    /* Gọi animation để thanh chạy từ 0% lên kích thước khai báo trong HTML */
+    animation: loadProgress 1.5s ease-out forwards;
+}
+
+/* Khai báo chuyển động chạy thanh phần trăm */
+@keyframes loadProgress {
+    from {
+        width: 0;
+    }
+}
+
+/* --- Responsive cho Mobile --- */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; 
+    }
+}

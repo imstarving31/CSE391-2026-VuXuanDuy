@@ -1,0 +1,153 @@
+.portfolio-section {
+    padding: 5rem 1rem;
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+}
+
+/* --- Khung Nút Bấm --- */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* --- Khung Lưới Chứa Ảnh --- */
+.portfolio-grid {
+    display: grid;
+    /* Tự động chia cột: nhỏ nhất 300px, lớn thì lấp đầy khoảng trống */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    border-radius: 12px;
+    /* Quan trọng: Cắt bỏ những phần ảnh lồi ra ngoài viền bo tròn */
+    overflow: hidden; 
+}
+
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 4/3; /* Ép tỷ lệ ảnh là 4:3 (ngang 4, cao 3) */
+    object-fit: cover;
+    display: block;
+}
+/* --- Cài đặt Mỏ neo cho Hover --- */
+.portfolio-item {
+    position: relative; /* Làm mỏ neo để lớp overlay bám vào */
+}
+
+/* Chuẩn bị hiệu ứng cho ảnh */
+.portfolio-item img {
+    transition: transform 0.4s ease;
+}
+
+/* KHI HOVER: Phóng to ảnh lên 1.1 lần */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Thiết kế Lớp Phủ (Overlay) --- */
+.portfolio-overlay {
+    position: absolute; /* Phủ lên trên bức ảnh */
+    inset: 0; /* Ép chặt vào 4 mép của phần tử cha */
+    /* Dải màu đen mờ dần từ dưới lên trên */
+    background: linear-gradient(to top, rgba(30, 41, 59, 0.95) 0%, rgba(30, 41, 59, 0.6) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Đẩy chữ xuống đáy */
+    padding: 1.5rem;
+    opacity: 0; /* Trạng thái bình thường: Ẩn đi hoàn toàn */
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-overlay h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* KHI HOVER: Hiển thị lớp phủ ra */
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+
+/* --- Hộp Lightbox Phóng To --- */
+.lightbox {
+    position: fixed; /* Ghim chặt vào màn hình */
+    inset: 0;
+    background: rgba(0,0,0,0.95); /* Màn hình tối đen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Ẩn mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2000; /* Đảm bảo nổi lên trên cùng của trang web */
+}
+
+/* THE MAGIC: Thuộc tính :target */
+/* Nếu URL trình duyệt có chứa #lightbox-1 (do vừa click vào thẻ a), thì hộp này sẽ hiện lên */
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}

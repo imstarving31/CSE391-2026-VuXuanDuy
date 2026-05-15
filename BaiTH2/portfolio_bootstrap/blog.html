@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vu Xuan Duy | Blog Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            /* Theme palette:
+               Teal 500 #14b8a6
+               Teal 600 #0f766e
+               Teal 100 #ccfbf1
+               Slate 900 #0f172a
+               Slate 700 #334155
+               Slate 200 #dbe4ea
+            */
+            --bs-primary: #14b8a6;
+            --bs-primary-rgb: 20, 184, 166;
+            --bs-secondary: #64748b;
+            --bs-secondary-rgb: 100, 116, 139;
+            --bs-body-font-family: "Inter", system-ui, sans-serif;
+            --bs-body-bg: #f4fbfa;
+            --bs-body-color: #0f172a;
+            --bs-border-radius: 0.85rem;
+            --bs-border-radius-sm: 0.6rem;
+            --bs-border-radius-lg: 1.25rem;
+            --bs-border-radius-xl: 1.75rem;
+            --surface: #ffffff;
+            --surface-soft: #ecfeff;
+            --ink-muted: #475569;
+            --line-soft: #dbe4ea;
+            --page-gradient: linear-gradient(135deg, #0f766e 0%, #14b8a6 58%, #99f6e4 100%);
+            --section-space: 5rem;
+            --soft-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+        }
+
+        /* Custom spacing scale */
+        .py-section {
+            padding-top: var(--section-space);
+            padding-bottom: var(--section-space);
+        }
+
+        body {
+            background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.1), transparent 30%), var(--bs-body-bg);
+        }
+
+        .site-nav {
+            background-color: rgba(244, 251, 250, 0.92);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 1px 0 rgba(15, 23, 42, 0.05);
+        }
+
+        .page-hero {
+            background: var(--page-gradient);
+            border-radius: 2rem;
+            box-shadow: 0 18px 42px rgba(15, 118, 110, 0.12);
+        }
+
+        .section-label {
+            color: var(--bs-primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .card {
+            border: 1px solid var(--line-soft);
+            border-radius: 1.4rem;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .post-cover,
+        .recent-thumb {
+            object-fit: cover;
+        }
+
+        .post-cover {
+            height: 220px;
+        }
+
+        .featured-cover {
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+        }
+
+        .sticky-column {
+            top: 5.5rem;
+        }
+
+        .text-muted-custom {
+            color: var(--ink-muted);
+        }
+
+        .tag-badge {
+            background-color: var(--surface-soft);
+            color: #0f766e;
+        }
+
+        .comment-box {
+            background-color: #f8fffe;
+        }
+
+        .comment-avatar,
+        .reply-avatar,
+        .form-avatar {
+            object-fit: cover;
+        }
+
+        .comment-avatar {
+            width: 52px;
+            height: 52px;
+        }
+
+        .reply-avatar {
+            width: 40px;
+            height: 40px;
+        }
+
+        .form-avatar {
+            width: 56px;
+            height: 56px;
+        }
+
+        .comment-reply {
+            border-left: 3px solid #cdeee9;
+            padding-left: 1rem;
+            margin-left: 1rem;
+        }
+
+        .btn-link {
+            color: var(--bs-primary);
+        }
+
+        .btn-link:hover,
+        .btn-link:focus {
+            color: #0f766e;
+        }
+
+        @media (max-width: 991.98px) {
+            .sticky-column {
+                position: static !important;
+            }
+
+            .py-section {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top site-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Vu Xuan Duy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#blogNav" aria-controls="blogNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="blogNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="btn btn-primary rounded-pill px-4 ms-lg-2" href="#comments">Comments</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-section">
+        <div class="container">
+            <section class="page-hero text-white p-4 p-lg-5 mb-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <p class="section-label text-white-50 mb-3">Blog Layout + Sidebar</p>
+                        <h1 class="display-5 fw-bold mb-3">Notes on frontend craft, Bootstrap layout work, and building developer-facing products.</h1>
+                        <p class="lead text-white-50 mb-0">This page completes the blog card layout, sticky sidebar, and comment section UI exercises in one responsive page.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <span class="badge rounded-pill bg-white text-primary px-4 py-3 fs-6">
+                            <i class="bi bi-journal-richtext me-2"></i>3 Articles
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row g-4 g-xl-5">
+                <div class="col-lg-8">
+                    <article class="card overflow-hidden mb-4">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80" class="featured-cover w-100" alt="Featured post">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body p-4 p-lg-5">
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge bg-primary rounded-pill">Featured</span>
+                                        <span class="badge text-bg-light border rounded-pill">Bootstrap</span>
+                                    </div>
+                                    <h2 class="h2 fw-bold mb-3">How I rebuild a reference website with Bootstrap without losing structure.</h2>
+                                    <p class="text-muted-custom mb-4">A practical walkthrough of moving from a loose visual reference to a clean implementation using containers, rows, columns, cards, and a small set of custom theme overrides.</p>
+                                    <div class="d-flex flex-wrap align-items-center gap-3 text-muted-custom small">
+                                        <span><i class="bi bi-person me-1"></i>Vu Xuan Duy</span>
+                                        <span><i class="bi bi-calendar3 me-1"></i>May 13, 2026</span>
+                                        <span><i class="bi bi-clock me-1"></i>6 min read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <article class="card h-100 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" class="post-cover card-img-top" alt="Workspace">
+                                <div class="card-body p-4">
+                                    <span class="badge text-bg-light border text-primary rounded-pill mb-3">Frontend</span>
+                                    <h3 class="h4 fw-bold">Why spacing systems make student projects look more professional</h3>
+                                    <p class="text-muted-custom mb-4">Consistent spacing creates rhythm, improves scannability, and makes Bootstrap utilities feel intentional instead of random.</p>
+                                    <div class="d-flex justify-content-between align-items-center text-muted-custom small">
+                                        <span>May 10, 2026</span>
+                                        <span><i class="bi bi-heart me-1"></i>18</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card h-100 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" class="post-cover card-img-top" alt="Code editor">
+                                <div class="card-body p-4">
+                                    <span class="badge text-bg-light border text-primary rounded-pill mb-3">JavaScript</span>
+                                    <h3 class="h4 fw-bold">When Bootstrap JavaScript is enough and when custom code is unnecessary</h3>
+                                    <p class="text-muted-custom mb-4">Navbar collapse, dismissible UI, and other interactions often work fine with Bootstrap bundle alone for course exercises.</p>
+                                    <div class="d-flex justify-content-between align-items-center text-muted-custom small">
+                                        <span>May 7, 2026</span>
+                                        <span><i class="bi bi-heart me-1"></i>26</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="card h-100 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80" class="post-cover card-img-top" alt="Laptop setup">
+                                <div class="card-body p-4">
+                                    <span class="badge text-bg-light border text-primary rounded-pill mb-3">UI Systems</span>
+                                    <h3 class="h4 fw-bold">Building cards that stay balanced from mobile to desktop</h3>
+                                    <p class="text-muted-custom mb-4">Equal-height cards, clear metadata, and strong hierarchy make blog layouts easier to scan and easier to maintain.</p>
+                                    <div class="d-flex justify-content-between align-items-center text-muted-custom small">
+                                        <span>May 2, 2026</span>
+                                        <span><i class="bi bi-heart me-1"></i>14</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <section id="comments">
+                        <div class="card p-4 p-lg-5 mb-4">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="form-avatar rounded-circle" alt="Author avatar">
+                                <div>
+                                    <p class="section-label mb-1">Comment Form</p>
+                                    <h2 class="h3 fw-bold mb-0">Leave a Comment</h2>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control form-control-lg" id="name" placeholder="Your name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control form-control-lg" id="email" placeholder="you@example.com" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="comment" class="form-label">Comment</label>
+                                        <textarea class="form-control form-control-lg" id="comment" rows="5" placeholder="Share your thoughts..." required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-4">Post Comment</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="card p-4 p-lg-5">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+                                <div>
+                                    <p class="section-label mb-1">Threaded Comments</p>
+                                    <h2 class="h3 fw-bold mb-0">3 Comments</h2>
+                                </div>
+                                <span class="badge text-bg-light border rounded-pill px-3 py-2">Reply UI included</span>
+                            </div>
+
+                            <div class="comment-item mb-4">
+                                <div class="d-flex gap-3">
+                                    <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80" class="comment-avatar rounded-circle" alt="Comment avatar">
+                                    <div class="flex-grow-1">
+                                        <div class="comment-box rounded-4 p-3 p-md-4">
+                                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+                                                <h3 class="h6 fw-bold mb-0">Linh Nguyen</h3>
+                                                <small class="text-muted-custom">2 hours ago</small>
+                                            </div>
+                                            <p class="mb-2 text-muted-custom">This layout is really clear. I like how the hero section and cards use Bootstrap structure without feeling too generic.</p>
+                                            <button class="btn btn-sm btn-link text-decoration-none px-0">
+                                                <i class="bi bi-reply me-1"></i>Reply
+                                            </button>
+                                        </div>
+
+                                        <div class="comment-reply mt-3">
+                                            <div class="d-flex gap-3">
+                                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="reply-avatar rounded-circle" alt="Reply avatar">
+                                                <div class="comment-box rounded-4 p-3 flex-grow-1">
+                                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+                                                        <h4 class="h6 fw-bold text-primary mb-0">Vu Xuan Duy</h4>
+                                                        <small class="text-muted-custom">1 hour ago</small>
+                                                    </div>
+                                                    <p class="mb-0 text-muted-custom">Thanks a lot. The goal was to keep the page easy to read while still showing enough customization for the Bootstrap exercise.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item mb-4">
+                                <div class="d-flex gap-3">
+                                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" class="comment-avatar rounded-circle" alt="Comment avatar">
+                                    <div class="flex-grow-1">
+                                        <div class="comment-box rounded-4 p-3 p-md-4">
+                                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+                                                <h3 class="h6 fw-bold mb-0">Minh Tran</h3>
+                                                <small class="text-muted-custom">5 hours ago</small>
+                                            </div>
+                                            <p class="mb-2 text-muted-custom">The sticky sidebar and categories widget work nicely together. It feels like a real blog instead of just a school assignment.</p>
+                                            <button class="btn btn-sm btn-link text-decoration-none px-0">
+                                                <i class="bi bi-reply me-1"></i>Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comment-item">
+                                <div class="d-flex gap-3">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" class="comment-avatar rounded-circle" alt="Comment avatar">
+                                    <div class="flex-grow-1">
+                                        <div class="comment-box rounded-4 p-3 p-md-4">
+                                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+                                                <h3 class="h6 fw-bold mb-0">An Vo</h3>
+                                                <small class="text-muted-custom">1 day ago</small>
+                                            </div>
+                                            <p class="mb-2 text-muted-custom">Could you add a version later that uses the same theme colors on a dashboard page too? The teal palette looks great.</p>
+                                            <button class="btn btn-sm btn-link text-decoration-none px-0">
+                                                <i class="bi bi-reply me-1"></i>Reply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="col-lg-4">
+                    <div class="sticky-top sticky-column">
+                        <div class="card p-4 mb-4">
+                            <h3 class="h5 fw-bold mb-3">Search</h3>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search articles...">
+                                <button class="btn btn-primary" type="button">Go</button>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-white py-3">
+                                <h3 class="h5 fw-bold mb-0">Categories</h3>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                    Frontend
+                                    <span class="badge bg-primary rounded-pill">12</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                    Bootstrap
+                                    <span class="badge bg-primary rounded-pill">9</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                    JavaScript
+                                    <span class="badge bg-primary rounded-pill">7</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                    UI Systems
+                                    <span class="badge bg-primary rounded-pill">5</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-white py-3">
+                                <h3 class="h5 fw-bold mb-0">Recent Posts</h3>
+                            </div>
+                            <div class="card-body">
+                                <a href="#comments" class="d-flex gap-3 text-decoration-none mb-3">
+                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" class="recent-thumb rounded-4 flex-shrink-0" width="68" height="68" alt="Recent post">
+                                    <div>
+                                        <h4 class="h6 text-dark mb-1">Spacing systems that make layouts feel intentional</h4>
+                                        <small class="text-muted-custom">May 10, 2026</small>
+                                    </div>
+                                </a>
+                                <a href="#comments" class="d-flex gap-3 text-decoration-none mb-3">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" class="recent-thumb rounded-4 flex-shrink-0" width="68" height="68" alt="Recent post">
+                                    <div>
+                                        <h4 class="h6 text-dark mb-1">Using Bootstrap JS without extra scripting</h4>
+                                        <small class="text-muted-custom">May 7, 2026</small>
+                                    </div>
+                                </a>
+                                <a href="#comments" class="d-flex gap-3 text-decoration-none">
+                                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=300&q=80" class="recent-thumb rounded-4 flex-shrink-0" width="68" height="68" alt="Recent post">
+                                    <div>
+                                        <h4 class="h6 text-dark mb-1">Building balanced cards for blog layouts</h4>
+                                        <small class="text-muted-custom">May 2, 2026</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header bg-white py-3">
+                                <h3 class="h5 fw-bold mb-0">Tags</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="badge tag-badge rounded-pill px-3 py-2">HTML</span>
+                                    <span class="badge tag-badge rounded-pill px-3 py-2">CSS</span>
+                                    <span class="badge tag-badge rounded-pill px-3 py-2">Bootstrap</span>
+                                    <span class="badge tag-badge rounded-pill px-3 py-2">JavaScript</span>
+                                    <span class="badge tag-badge rounded-pill px-3 py-2">Responsive</span>
+                                    <span class="badge tag-badge rounded-pill px-3 py-2">Components</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

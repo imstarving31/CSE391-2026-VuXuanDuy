@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Test CSS Selectors</title>
+    <style>
+        /* CSS trang trí cơ bản để giống một trang web */
+        body { font-family: sans-serif; background: #f0f2f5; padding: 20px; }
+        #app { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        .top-bar { background: #333; color: white; padding: 15px; margin-bottom: 20px; border-radius: 4px; }
+        nav a { color: #66b3ff; margin-right: 15px; text-decoration: none; }
+        .product { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 4px; }
+        .price { color: #e11d48; font-weight: bold; font-size: 1.2em; }
+
+      
+        /* 1. Selector h1 */
+        /* h1 { outline: 4px solid red; } */
+
+        /* 2. Selector .price */
+        /* .price { outline: 4px solid blue; } */
+
+        /* 3. Selector #app header */
+        /* #app header { outline: 4px solid green; } */
+
+        /* 4. Selector nav a:first-child */
+        /* nav a:first-child { outline: 4px solid orange; } */
+
+        /* 5. Selector .product.featured h2 */
+        /* .product.featured h2 { outline: 4px solid purple; } */
+
+        /* 6. Selector article > p */
+        /* article > p { outline: 4px solid teal; } */
+
+        /* 7. Selector a[href="/"] */
+        /* a[href="/"] { outline: 4px solid magenta; } 
+
+        /* 8. Selector .top-bar.dark h1 */
+        /* .top-bar.dark h1 { outline: 4px dashed gold; } */
+
+    </style>
+</head>
+<body>
+
+   
+    <div id="app">
+        <header class="top-bar dark">
+            <h1>ShopTLU</h1>
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+        <main>
+            <article class="product">
+                <h2>iPhone 16</h2>
+                <p class="price">25.990.000đ</p>
+                <p>Mô tả sản phẩm...</p>
+            </article>
+            <article class="product featured">
+                <h2>MacBook Pro</h2>
+                <p class="price">45.990.000đ</p>
+                <p>Mô tả sản phẩm...</p>
+            </article>
+        </main>
+    </div>
+
+</body>
+</html>

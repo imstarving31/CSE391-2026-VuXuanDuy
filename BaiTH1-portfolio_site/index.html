@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <header> 
+        <div class="logo">Vu Xuan Duy</div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label> <!-- Ký tự ☰ là icon 3 gạch -->
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    </header>
+    <section class="hero">
+        <h1>Hi, I'm <span class="highlight">Duy</span></h1>
+        <p>Full-Stack Developer | UI Designer | Problem Solver</p>
+        <a href="#portfolio" class="cta-button">View My Work</a>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="tải xuống.jpg" alt="Profile Photo">
+                </div>
+                <div class="about-content">
+                    <h2>About Me</h2>
+                     <p class="lead">I'm a passionate developer with 3+ years of experience building web applications.</p>
+                <p>Specialized in Frontend development with React and Vue. Also experienced in Backend with Node.js and Python.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="skills" class="skills-section">
+    <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">HTML5</span>
+                    <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">CSS3</span>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">React</span>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-name">Node.js</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <h2 class="section-title">My Portfolio</h2>
+        
+        <div class="portfolio-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Web</button>
+            <button class="filter-btn">Mobile</button>
+            <button class="filter-btn">Design</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="web">
+                <a href="#lightbox-1" class="lightbox-link">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Web 1">
+                    <div class="portfolio-overlay">
+                        <h3>Tên Dự Án</h3>
+                        <p>Công nghệ sử dụng</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item" data-category="web">
+                <a href="#lightbox-2" class="lightbox-link">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Web 2">
+                    <div class="portfolio-overlay">
+                        <h3>Tên Dự Án</h3>
+                        <p>Công nghệ sử dụng</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item" data-category="web">
+                <a href="#lightbox-3" class="lightbox-link">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=600&q=80" alt="Web 3">
+                    <div class="portfolio-overlay">
+                        <h3>Tên Dự Án</h3>
+                        <p>Công nghệ sử dụng</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item" data-category="mobile">
+                <a href="#lightbox-4" class="lightbox-link">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="Mobile 1">
+                    <div class="portfolio-overlay">
+                        <h3>Tên Dự Án</h3>
+                        <p>Công nghệ sử dụng</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item" data-category="mobile">
+                <a href="#lightbox-5" class="lightbox-link">
+                    <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=600&q=80" alt="Mobile 2">
+                    <div class="portfolio-overlay">
+                        <h3>Tên Dự Án</h3>
+                        <p>Công nghệ sử dụng</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="portfolio-item" data-category="design">
+                <a href="#lightbox-6" class="lightbox-link">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="Design 1">
+                    <div class="portfolio-overlay">
+                        <h3>Tên Dự Án</h3>
+                        <p>Công nghệ sử dụng</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox-1" class="lightbox">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Web 1 Full">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+    </div>
+
+    <div id="lightbox-2" class="lightbox">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" alt="Web 2 Full">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+    </div>
+
+    <div id="lightbox-3" class="lightbox">
+        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1200&q=80" alt="Web 3 Full">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+    </div>
+
+    <div id="lightbox-4" class="lightbox">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80" alt="Mobile 1 Full">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+    </div>
+
+    <div id="lightbox-5" class="lightbox">
+        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=1200&q=80" alt="Mobile 2 Full">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+    </div>
+
+    <div id="lightbox-6" class="lightbox">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80" alt="Design 1 Full">
+        <a href="#portfolio" class="lightbox-close">&times;</a>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Feel free to reach out. I'm always open to discussing new projects and creative collaborations.</p>
+                <div class="info-item">
+                    <span class="icon" aria-hidden="true">📧</span>
+                    <span>duy.vx@example.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="icon" aria-hidden="true">📍</span>
+                    <span>Hanoi, Vietnam</span>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">Vu Xuan Duy</div>
+            <p class="footer-tagline">Building digital experiences</p>
+            <div class="social-links">
+                <a href="https://github.com/imstarving31" class="social-link" aria-label="GitHub" target="_blank" rel="noreferrer">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577V20.58c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.304-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.123-.303-.535-1.524.118-3.176 0 0 1.008-.322 3.3 1.23A11.49 11.49 0 0 1 12 5.801c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.241 2.874.118 3.176.769.84 1.235 1.91 1.235 3.221 0 4.609-2.806 5.625-5.479 5.921.431.372.823 1.103.823 2.222v3.293c0 .319.192.694.801.576C20.565 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M4.983 3.5C4.983 4.881 3.87 6 2.496 6A2.503 2.503 0 0 1 0 3.5C0 2.119 1.113 1 2.487 1h.009a2.5 2.5 0 0 1 2.487 2.5ZM.5 8h4V24h-4V8Zm7 0h3.833v2.188h.055c.534-1.013 1.839-2.083 3.786-2.083 4.049 0 4.797 2.667 4.797 6.135V24h-4v-7.16c0-1.707-.03-3.904-2.38-3.904-2.383 0-2.747 1.86-2.747 3.78V24h-4V8Z"/>
+                    </svg>
+                </a>
+                <a href="mailto:duy.vx@example.com" class="social-link" aria-label="Email">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M1.5 4.5h21a1.5 1.5 0 0 1 1.5 1.5v12A1.5 1.5 0 0 1 22.5 19.5h-21A1.5 1.5 0 0 1 0 18V6a1.5 1.5 0 0 1 1.5-1.5Zm0 2.018V18h21V6.518l-9.91 6.607a1.5 1.5 0 0 1-1.664 0L1.5 6.518Zm19.56-.518H2.94L12 12.04 21.06 6Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Vu Xuan Duy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
