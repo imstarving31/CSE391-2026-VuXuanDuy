@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Debug Flexbox</title>
+    <style>
+        /* CSS reset cơ bản để dễ nhìn */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: sans-serif; background-color: #f4f4f9; color: #333; padding: 20px; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        section { background: #fff; padding: 20px; margin-bottom: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #d9534f; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .label { display: inline-block; padding: 5px 10px; color: white; border-radius: 4px; margin-bottom: 10px; font-weight: bold; }
+        .label.before { background: #f0ad4e; }
+        .label.after { background: #5cb85c; }
+        .demo-box { margin-bottom: 30px; border: 2px dashed #ccc; padding: 10px; background: #fafafa; }
+
+        /* =========================================
+           LỖI 1: CARDS KHÔNG ĐỀU CHIỀU CAO
+           ========================================= */
+        .card-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+        }
+        .card { 
+            width: 30%; 
+            margin: 1.5%; 
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .card img { width: 100%; height: 100px; object-fit: cover; background: #ddd; }
+        .card h3 { font-size: 18px; margin: 10px 0; }
+        .card p { margin-bottom: 15px; font-size: 14px; color: #666; }
+        .card .btn { 
+            padding: 10px; 
+            background: #0275d8; 
+            color: #fff; 
+            border: none; 
+            cursor: pointer; 
+            width: 100%;
+        }
+
+        /* --- Sửa Lỗi 1 --- */
+        .fix-1 .card {
+            display: flex;
+            flex-direction: column;
+        }
+        .fix-1 .card .btn {
+            margin-top: auto; /* Đẩy nút xuống đáy */
+        }
+
+        /* =========================================
+           LỖI 2: CĂN GIỮA (Dùng 300px thay vì 100vh để dễ test)
+           ========================================= */
+        .hero {
+            height: 300px; /* Giả lập 100vh cho gọn màn hình */
+            display: flex;
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+        }
+        .hero-content {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #0275d8;
+        }
+
+        /* --- Sửa Lỗi 2 --- */
+        .fix-2 {
+            justify-content: center; /* Căn giữa ngang */
+            align-items: center;     /* Căn giữa dọc */
+        }
+
+        /* =========================================
+           LỖI 3: SIDEBAR BỊ CO LẠI
+           ========================================= */
+        .layout { 
+            display: flex; 
+            height: 120px; 
+            border: 1px solid #ccc;
+        }
+        .sidebar { 
+            width: 250px; 
+            background: #f8d7da; 
+            padding: 15px; 
+        }
+        .content { 
+            flex: 1; 
+            background: #d1ecf1; 
+            padding: 15px; 
+            overflow: hidden; /* Cố tình làm hẹp để bóp Sidebar */
+        }
+        /* Tạo một nội dung rất dài ép Sidebar phải co lại ở bản Before */
+        .long-text { width: 1000px; background: rgba(0,0,0,0.1); padding: 10px; }
+
+        /* --- Sửa Lỗi 3 --- */
+        .fix-3 .sidebar {
+            flex-shrink: 0; /* Cấm co lại */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Môi trường Test Debug Flexbox</h1>
+
+    <section>
+        <h2>Lỗi 1: Cards không đều chiều cao</h2>
+        
+        <div class="label before">Trạng thái: Trước khi sửa</div>
+        <div class="demo-box">
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="img">
+                    <h3>Sản phẩm 1</h3>
+                    <p>Mô tả ngắn.</p>
+                    <button class="btn">Mua ngay</button>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="img">
+                    <h3>Sản phẩm 2</h3>
+                    <p>Mô tả rất dài. Đoạn text này cố tình làm dài ra để thay đổi chiều cao của thẻ card. Bạn sẽ thấy nút bị lộn xộn.</p>
+                    <button class="btn">Mua ngay</button>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="img">
+                    <h3>Sản phẩm 3</h3>
+                    <p>Mô tả vừa vừa thôi.</p>
+                    <button class="btn">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="label after">Trạng thái: Sau khi sửa (Nút dính đáy)</div>
+        <div class="demo-box fix-1">
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="img">
+                    <h3>Sản phẩm 1</h3>
+                    <p>Mô tả ngắn.</p>
+                    <button class="btn">Mua ngay</button>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="img">
+                    <h3>Sản phẩm 2</h3>
+                    <p>Mô tả rất dài. Đoạn text này cố tình làm dài ra để thay đổi chiều cao của thẻ card. Tất cả các nút giờ đã thẳng hàng.</p>
+                    <button class="btn">Mua ngay</button>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300" alt="img">
+                    <h3>Sản phẩm 3</h3>
+                    <p>Mô tả vừa vừa thôi.</p>
+                    <button class="btn">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Lỗi 2: Căn giữa khối trong container</h2>
+        
+        <div class="label before">Trạng thái: Trước khi sửa (Dính góc)</div>
+        <div class="demo-box">
+            <div class="hero">
+                <div class="hero-content">
+                    <h3>Nội dung Hero</h3>
+                    <p>Chỉ text được căn giữa, khối thì không.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="label after">Trạng thái: Sau khi sửa (Nằm giữa tuyệt đối)</div>
+        <div class="demo-box">
+            <div class="hero fix-2">
+                <div class="hero-content">
+                    <h3>Nội dung Hero</h3>
+                    <p>Khối đã nằm chính giữa Container.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Lỗi 3: Sidebar bị bóp méo khi Content dài</h2>
+        
+        <div class="label before">Trạng thái: Trước khi sửa (Sidebar mất kích thước 250px)</div>
+        <div class="demo-box">
+            <div class="layout">
+                <div class="sidebar">SIDEBAR (250px)</div>
+                <div class="content">
+                    <div class="long-text">Đây là đoạn nội dung rất dài ép vùng Content phải mở rộng, khiến Sidebar bên trái bị bóp lại nhỏ hơn 250px.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="label after">Trạng thái: Sau khi sửa (Sidebar giữ vững 250px)</div>
+        <div class="demo-box fix-3">
+            <div class="layout">
+                <div class="sidebar">SIDEBAR (250px)</div>
+                <div class="content">
+                    <div class="long-text">Dù đoạn nội dung này dài bao nhiêu đi nữa, Sidebar vẫn giữ nguyên kích thước 250px nhờ lệnh flex-shrink: 0.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
