@@ -1,0 +1,59 @@
+// ============================================
+// SCSS Mixins
+// ============================================
+
+// Responsive Breakpoint Mixin
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'tablet' {
+        @media (min-width: $breakpoint-tablet) {
+            @content;
+        }
+    } @else if $breakpoint == 'desktop' {
+        @media (min-width: $breakpoint-desktop) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+// Flexbox Center Mixin
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Card Shadow & Border Mixin
+@mixin card-shadow {
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Button Styles Mixin
+@mixin button-styles($bg-color: $primary-color, $text-color: white, $padding: $spacing-md) {
+    padding: $padding;
+    background: $bg-color;
+    color: $text-color;
+    border: none;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    transition: all $transition-duration $transition-ease;
+    
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.02);
+    }
+}
+
+// Flex Grid Mixin
+@mixin flex-grid($gap: $spacing-md, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+}

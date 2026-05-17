@@ -1,0 +1,225 @@
+// ============================================
+// SCSS Components (Nesting)
+// ============================================
+
+// Reset & Base
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $font-primary;
+    background-color: $background-color;
+    color: $text-color;
+    line-height: $line-height-default;
+    font-size: $font-size-sm;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// ============ Header Component ============
+.header {
+    background: $secondary-color;
+    color: white;
+    padding: $spacing-2xl $spacing-md;
+    @include flex-center;
+    justify-content: space-between;
+    
+    // Logo nested under header
+    .logo {
+        font-size: 1.5rem;
+        font-weight: $font-weight-bold;
+        
+        &:hover {
+            opacity: 0.8;
+            transition: opacity $transition-duration;
+        }
+    }
+    
+    // Hamburger menu nested under header
+    .hamburger {
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: block;
+        
+        &:hover {
+            transform: scale(1.1);
+            transition: transform $transition-duration;
+        }
+    }
+    
+    // Navigation links nested under header
+    .nav-links {
+        display: none;
+        @include flex-grid($spacing-md);
+        
+        a {
+            color: white;
+            text-decoration: none;
+            transition: color $transition-duration;
+            
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+// ============ Card Component (WITH NESTING) ============
+.card {
+    background: white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    padding: $spacing-2xl;
+    @include flex-grid($spacing-md, column);
+    text-align: center;
+    transition: all $transition-duration;
+    
+    // Card image nested under card
+    .card-image {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius-sm;
+        margin-bottom: $spacing-md;
+        
+        &:hover {
+            transform: scale(1.05);
+            transition: transform $transition-duration;
+        }
+    }
+    
+    // Card title nested under card
+    .card-title,
+    h3 {
+        margin: $spacing-md 0;
+        color: $text-color;
+        font-size: $font-size-md;
+    }
+    
+    // Card price nested under card
+    .card-price,
+    p {
+        color: $accent-color;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-lg;
+        font-size: 1.2rem;
+    }
+    
+    // Card button nested under card
+    button {
+        margin-top: auto;
+        @include button-styles($primary-color, white, $spacing-sm $spacing-md);
+    }
+    
+    // Hover state nested under card
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+    }
+    
+    // Featured card variant nested under card
+    &.featured {
+        border: 2px solid $primary-color;
+        background: linear-gradient(135deg, rgba(49, 130, 206, 0.05) 0%, transparent 100%);
+        
+        .card-title {
+            color: $primary-color;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+// ============ Product Grid Component ============
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    
+    @include respond-to('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include respond-to('desktop') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// ============ Layout Wrapper ============
+.layout-wrapper {
+    padding: $spacing-md;
+}
+
+// ============ Sidebar Component ============
+.sidebar {
+    display: none;
+    @include flex-grid($spacing-2xl);
+    padding: $spacing-2xl;
+    background: white;
+    margin-bottom: $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-md;
+    
+    .filter-dropdown {
+        padding: $spacing-sm;
+        border: 1px solid $border-color;
+        border-radius: $border-radius-sm;
+    }
+    
+    @include respond-to('tablet') {
+        display: flex;
+    }
+    
+    @include respond-to('desktop') {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+        
+        .filter-dropdown {
+            width: 100%;
+        }
+    }
+}
+
+// ============ Ads Bar Component ============
+.ads-bar {
+    display: none;
+    background: $light-gray;
+    padding: $spacing-lg;
+    text-align: center;
+    height: 400px;
+    border: 1px dashed $dark-gray;
+    border-radius: $border-radius-md;
+    
+    @include respond-to('desktop') {
+        display: block;
+    }
+}
+
+// ============ Footer Component ============
+.footer {
+    background: $secondary-color;
+    color: white;
+    padding: $spacing-md;
+    text-align: center;
+    margin-top: $spacing-lg;
+    
+    p {
+        margin: $spacing-sm 0;
+        font-size: $font-size-sm;
+    }
+    
+    a {
+        color: $primary-color;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

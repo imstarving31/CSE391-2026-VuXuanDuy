@@ -1,0 +1,42 @@
+// ============================================
+// SCSS Variables
+// ============================================
+
+// Colors
+$primary-color: #3182ce;
+$secondary-color: #1a202c;
+$accent-color: #e53e3e;
+$background-color: #f4f4f9;
+$border-color: #ddd;
+$light-gray: #e2e8f0;
+$dark-gray: #a0aec0;
+$text-color: #333;
+
+// Typography
+$font-primary: 'Arial', 'Helvetica', sans-serif;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-weight-bold: bold;
+$line-height-default: 1.5;
+
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Spacing
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xlg: 20px;
+$spacing-2xl: 15px;
+
+// Sizing
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$max-width-sidebar: 250px;
+$max-width-ads: 250px;
+
+// Transitions
+$transition-duration: 0.3s;
+$transition-ease: ease-in-out;
