@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="qlsvstyle.css">
+</head>
+<body>
+    <main class="app">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">Bài thực hành DOM & sự kiện</p>
+                <h1>Quản lý sinh viên</h1>
+            </div>
+            <button id="btnOpenForm" class="btn btn-primary" type="button">
+                Thêm sinh viên
+            </button>
+        </header>
+
+        <section class="statistics" aria-label="Thống kê lớp học">
+            <div class="stat-item">
+                <span class="stat-label">Tổng số sinh viên</span>
+                <strong id="totalStudents">0</strong>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Điểm trung bình lớp</span>
+                <strong id="classAverage">0.00</strong>
+            </div>
+        </section>
+
+        <p id="messageBox" class="message" aria-live="polite"></p>
+
+        <section class="table-section" aria-label="Danh sách sinh viên">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã SV</th>
+                        <th>Họ và tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Lớp học</th>
+                        <th>Điểm TB</th>
+                        <th>Email</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+            <div class="modal-header">
+                <h2 id="formTitle">Thêm sinh viên</h2>
+                <button id="btnCloseForm" class="icon-button" type="button" aria-label="Đóng form">
+                    ×
+                </button>
+            </div>
+
+            <form id="studentForm" novalidate>
+                <div class="form-grid">
+                    <label>
+                        Mã sinh viên
+                        <input id="studentId" type="text" placeholder="VD: SV001">
+                        <span class="field-error" data-error-for="studentId"></span>
+                    </label>
+
+                    <label>
+                        Họ và tên
+                        <input id="fullName" type="text" placeholder="VD: Nguyễn Văn An">
+                        <span class="field-error" data-error-for="fullName"></span>
+                    </label>
+
+                    <label>
+                        Ngày sinh
+                        <input id="birthday" type="date">
+                        <span class="field-error" data-error-for="birthday"></span>
+                    </label>
+
+                    <label>
+                        Lớp học
+                        <select id="className">
+                            <option value="">-- Chọn lớp --</option>
+                            <option value="64CNTT2">64CNTT2</option>
+                            <option value="64CNTT3">64CNTT3</option>
+                            <option value="64CNTT4">64CNTT4</option>
+                        </select>
+                        <span class="field-error" data-error-for="className"></span>
+                    </label>
+
+                    <label>
+                        Điểm trung bình
+                        <input id="averageScore" type="number" min="0" max="10" step="0.1" placeholder="0 - 10">
+                        <span class="field-error" data-error-for="averageScore"></span>
+                    </label>
+
+                    <label>
+                        Email
+                        <input id="email" type="email" placeholder="name@e.tlu.edu.vn">
+                        <span class="field-error" data-error-for="email"></span>
+                    </label>
+                </div>
+
+                <p id="scoreHint" class="score-hint">Nhập điểm từ 0 đến 10.</p>
+
+                <label class="confirm-row">
+                    <input id="confirmInfo" type="checkbox">
+                    Tôi xác nhận thông tin đã nhập là đúng.
+                </label>
+
+                <div class="form-actions">
+                    <button id="btnCancel" class="btn btn-secondary" type="button">Hủy</button>
+                    <button id="btnSave" class="btn btn-primary" type="submit" disabled>Lưu sinh viên</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="qlsvscript.js"></script>
+</body>
+</html>

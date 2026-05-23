@@ -1,0 +1,294 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #20242a;
+    background: #eef3f8;
+}
+
+.app {
+    width: min(1120px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: #52616f;
+    font-size: 14px;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: 32px;
+}
+
+.btn,
+.icon-button {
+    border: 0;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn {
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    color: #fff;
+    background: #1769aa;
+}
+
+.btn-primary:hover {
+    background: #0f578e;
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed;
+    background: #93a8ba;
+}
+
+.btn-secondary {
+    color: #26323d;
+    background: #d9e2ea;
+}
+
+.btn-warning {
+    color: #fff;
+    background: #7c5d00;
+}
+
+.btn-danger {
+    color: #fff;
+    background: #b3261e;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.stat-item {
+    padding: 16px;
+    border: 1px solid #d4dde6;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5d6975;
+    font-size: 14px;
+}
+
+.stat-item strong {
+    font-size: 26px;
+}
+
+.message {
+    min-height: 24px;
+    margin-bottom: 12px;
+    color: #1769aa;
+    font-weight: 700;
+}
+
+.message.error {
+    color: #b3261e;
+}
+
+.table-section {
+    overflow-x: auto;
+    border: 1px solid #d4dde6;
+    border-radius: 8px;
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 860px;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #e3e9ef;
+    text-align: left;
+    vertical-align: middle;
+}
+
+thead th {
+    color: #344251;
+    background: #f7fafc;
+}
+
+tbody tr:hover {
+    background: #f5f9fd;
+}
+
+.action-group {
+    display: flex;
+    gap: 8px;
+}
+
+.empty-row {
+    color: #6b7682;
+    text-align: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.48);
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal {
+    width: min(720px, 100%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 22px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.modal-header h2 {
+    margin-bottom: 0;
+}
+
+.icon-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #26323d;
+    background: #edf2f7;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+label {
+    display: grid;
+    gap: 7px;
+    color: #344251;
+    font-weight: 700;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid #b8c5d1;
+    border-radius: 6px;
+    color: #20242a;
+    font: inherit;
+}
+
+input:focus,
+select:focus {
+    border-color: #1769aa;
+    outline: 3px solid rgba(23, 105, 170, 0.16);
+}
+
+input.invalid,
+select.invalid {
+    border-color: #b3261e;
+}
+
+.field-error {
+    min-height: 18px;
+    color: #b3261e;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.score-hint {
+    margin: 12px 0;
+    color: #52616f;
+}
+
+.score-hint.good {
+    color: #116329;
+}
+
+.score-hint.warning {
+    color: #7c5d00;
+}
+
+.score-hint.danger {
+    color: #b3261e;
+}
+
+.confirm-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.confirm-row input {
+    width: 18px;
+    min-height: 18px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@media (max-width: 700px) {
+    .page-header,
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .statistics,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

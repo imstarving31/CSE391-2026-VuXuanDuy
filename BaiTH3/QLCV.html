@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý công việc cá nhân</title>
+    <link rel="stylesheet" href="taskstyle.css">
+</head>
+<body>
+    <main class="task-app">
+        <header class="task-header">
+            <div>
+                <p class="eyebrow">Bài 2 - DOM & xử lý sự kiện</p>
+                <h1>Quản lý công việc cá nhân</h1>
+            </div>
+            <button id="btnOpenTaskForm" class="btn btn-primary" type="button">Thêm công việc</button>
+        </header>
+
+        <section class="summary" aria-label="Thống kê công việc">
+            <article class="summary-item">
+                <span>Tổng công việc</span>
+                <strong id="totalTasks">0</strong>
+            </article>
+            <article class="summary-item">
+                <span>Đã hoàn thành</span>
+                <strong id="completedTasks">0</strong>
+            </article>
+            <article class="summary-item">
+                <span>Chưa hoàn thành</span>
+                <strong id="pendingTasks">0</strong>
+            </article>
+        </section>
+
+        <p id="taskMessage" class="message" aria-live="polite"></p>
+
+        <section class="task-list-section" aria-label="Danh sách công việc">
+            <div id="taskList" class="task-list"></div>
+        </section>
+    </main>
+
+    <div id="taskModal" class="modal-overlay hidden">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="taskFormTitle">
+            <div class="modal-header">
+                <h2 id="taskFormTitle">Thêm công việc</h2>
+                <button id="btnCloseTaskForm" class="icon-button" type="button" aria-label="Đóng form">×</button>
+            </div>
+
+            <form id="taskForm" novalidate>
+                <div class="form-grid">
+                    <label>
+                        Tiêu đề công việc
+                        <input id="taskTitle" type="text" placeholder="VD: Hoàn thiện bài thực hành">
+                        <span class="field-error" data-error-for="taskTitle"></span>
+                    </label>
+
+                    <label>
+                        Hạn hoàn thành
+                        <input id="taskDueDate" type="date">
+                        <span class="field-error" data-error-for="taskDueDate"></span>
+                    </label>
+
+                    <label>
+                        Mức ưu tiên
+                        <select id="taskPriority">
+                            <option value="">-- Chọn mức ưu tiên --</option>
+                            <option value="Thấp">Thấp</option>
+                            <option value="Trung bình">Trung bình</option>
+                            <option value="Cao">Cao</option>
+                        </select>
+                        <span class="field-error" data-error-for="taskPriority"></span>
+                    </label>
+
+                    <label class="full-row">
+                        Mô tả ngắn
+                        <textarea id="taskDescription" rows="4" placeholder="Ghi chú ngắn về công việc"></textarea>
+                        <span class="field-error" data-error-for="taskDescription"></span>
+                    </label>
+                </div>
+
+                <label class="checkbox-row">
+                    <input id="taskCompleted" type="checkbox">
+                    Đánh dấu đã hoàn thành
+                </label>
+
+                <div class="form-actions">
+                    <button id="btnCancelTaskForm" class="btn btn-secondary" type="button">Hủy</button>
+                    <button id="btnSaveTask" class="btn btn-primary" type="submit">Lưu công việc</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="taskscript.js"></script>
+</body>
+</html>
