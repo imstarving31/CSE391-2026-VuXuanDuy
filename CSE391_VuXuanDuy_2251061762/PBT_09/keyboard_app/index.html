@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header>
+            <div>
+                <h1>Keyboard Gallery</h1>
+                <p>← → chuyển ảnh, 1-9 chọn ảnh, Space phát/dừng, Ctrl+K mở lệnh.</p>
+            </div>
+            <button id="openPalette" type="button" aria-label="Mở bảng lệnh">Command Palette</button>
+        </header>
+
+        <section class="gallery" aria-label="Thư viện ảnh">
+            <button id="previousImage" type="button" aria-label="Ảnh trước">←</button>
+            <button id="openImage" class="image-button" type="button" aria-label="Mở ảnh hiện tại">
+                <img id="galleryImage" src="" alt="">
+            </button>
+            <button id="nextImage" type="button" aria-label="Ảnh tiếp theo">→</button>
+        </section>
+
+        <div class="toolbar">
+            <button id="toggleSlideshow" type="button" aria-label="Phát slideshow">Phát slideshow</button>
+            <span id="imageCounter" aria-live="polite"></span>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <div id="imageModal" class="overlay" hidden>
+        <section class="image-modal" role="dialog" aria-modal="true" aria-label="Ảnh phóng to">
+            <button id="closeImageModal" class="close" type="button" aria-label="Đóng ảnh">X</button>
+            <img id="modalImage" src="" alt="">
+        </section>
+    </div>
+
+    <div id="paletteOverlay" class="overlay" hidden>
+        <section class="palette" role="dialog" aria-modal="true" aria-labelledby="paletteTitle">
+            <h2 id="paletteTitle">Command Palette</h2>
+            <input id="commandSearch" type="search" placeholder="Tìm lệnh..." aria-label="Tìm lệnh">
+            <ul id="commandList" role="listbox"></ul>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

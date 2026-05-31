@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="card">
+        <h1>Đăng ký tài khoản</h1>
+        <form id="registerForm" novalidate>
+            <label>
+                Tên
+                <input id="name" type="text" autocomplete="name" placeholder="Nguyễn Văn An">
+                <small id="nameStatus"></small>
+            </label>
+
+            <label>
+                Email
+                <input id="email" type="email" autocomplete="email" placeholder="an@example.com">
+                <small id="emailStatus"></small>
+            </label>
+
+            <label>
+                Mật khẩu
+                <input id="password" type="password" autocomplete="new-password">
+                <small id="passwordStatus"></small>
+                <span class="strength-track" aria-hidden="true">
+                    <span id="strengthBar"></span>
+                </span>
+            </label>
+
+            <label>
+                Xác nhận mật khẩu
+                <input id="confirmPassword" type="password" autocomplete="new-password">
+                <small id="confirmStatus"></small>
+            </label>
+
+            <label>
+                Số điện thoại
+                <input id="phone" type="tel" autocomplete="tel" maxlength="12" placeholder="0901-234-567">
+                <small id="phoneStatus"></small>
+            </label>
+
+            <button id="submitButton" type="submit" disabled>Đăng ký</button>
+        </form>
+    </main>
+
+    <div id="successModal" class="modal-backdrop" hidden>
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h2 id="modalTitle">Đăng ký thành công!</h2>
+            <p id="modalDetails"></p>
+            <button id="closeModal" type="button">Đóng</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

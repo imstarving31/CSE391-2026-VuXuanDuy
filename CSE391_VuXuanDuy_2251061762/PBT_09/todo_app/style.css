@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 16px;
+    color: #172033;
+    background: linear-gradient(135deg, #e8efff, #f7f9ff);
+    font-family: Arial, sans-serif;
+}
+
+.todo-app {
+    width: min(680px, 100%);
+    margin: auto;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgb(34 55 98 / 16%);
+}
+
+h1 {
+    margin: 0;
+    padding: 28px;
+    color: #fff;
+    background: #5068d8;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    padding: 22px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+input,
+button {
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+}
+
+input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px;
+    outline: 1px solid #d6dce8;
+}
+
+input:focus {
+    outline: 2px solid #5068d8;
+}
+
+button {
+    padding: 10px 14px;
+    cursor: pointer;
+    color: #fff;
+    background: #5068d8;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+    opacity: 0.86;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#todoList {
+    min-height: 120px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 22px;
+    border-bottom: 1px solid #edf0f5;
+    transition: background 160ms ease;
+}
+
+.todo-item:hover {
+    background: #f8f9fe;
+}
+
+.todo-text {
+    flex: 1;
+    cursor: pointer;
+    transition: color 160ms ease;
+}
+
+.completed .todo-text {
+    color: #9aa3b5;
+    text-decoration: line-through;
+}
+
+.delete-btn {
+    padding: 6px 9px;
+    color: #d94d58;
+    background: #fff0f1;
+}
+
+.edit-input {
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 22px;
+    color: #6e7788;
+    font-size: 14px;
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+}
+
+.filter,
+#clearCompleted {
+    padding: 6px 8px;
+    color: #697386;
+    background: transparent;
+}
+
+.filter.active {
+    color: #5068d8;
+    outline: 1px solid #5068d8;
+}
